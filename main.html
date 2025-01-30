@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Happy Valentines Day</title>
+         <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="aura-background">
+            <div class="img">
+                <img id="sad-ham" class="sad-ham" src="img/sad-ham.png" alt="">
+
+            </div>
+            <audio id="audio">
+                <source src="audio/sad-audio.mp3">
+            </audio>
+        <div class="container">
+            <div class="heartIcon">♥</div>
+            <h1>
+                WILL YOU BE MY VALENTINE ?</h1>
+            <div class="divider"></div>
+            <div class="buttons">
+                <button class="yes-btn"id="yesbtn" onclick="location.href='yes-page.html'"> YES </button>
+                <button class ="no-btn" id="nobtn"> NO </button>
+            </div>
+        </div>
+    </div>
+    </body>
+    <script>
+
+        //button functions
+            //no button
+            let no = document.getElementById("nobtn").addEventListener('click', change);
+
+            function change(){
+            var a = Math.floor(Math.random()*200)+1;
+            var b = Math.floor(Math.random()*100)+1;
+
+            var ham = document.getElementById('sad-ham');
+            var cat = document.getElementById('sad-cat');
+            var boy = document.getElementById('sad-boi');
+            var pls = document.getElementById('please');
+    
+            //position of btn
+            nobtn.style.left = a + 'px';
+            nobtn.style.top = b + 'px';
+
+            //imgs to fade in;
+            ham.classList.add("fade-in");
+
+
+            //audio
+            var audio = document.getElementById('audio');
+            audio.play();
+            audio.volume = 0.2;
+            }
+
+
+
+        //heart effects on mouse
+          document.addEventListener('mousemove', function(e){
+            
+            let body = document.querySelector('body');
+            let heart = document.createElement('span');
+            let x = e.offsetX;
+            let y = e.offsetY;
+            let size = Math.random()*30;
+            let transformValue = Math.random ()*360;
+
+            //position of heart
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+
+            //size of heart
+            heart.style.width = 1 + size + 'px';
+            heart.style.height = 1 + size + 'px';
+
+            heart.style.transform = 'rotate('+ transformValue +'deg)';
+
+            body.appendChild(heart);
+
+            setTimeout(function(){
+                heart.remove();
+            },1000)
+            })
+    </script>
+</html>

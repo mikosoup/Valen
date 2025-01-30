@@ -1,0 +1,137 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: pink;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+}
+.sad-ham{
+    opacity: 0;
+    transition: opacity 5s;
+    position: absolute;
+    width: 200px;
+    left: 650px;
+    top: 22%;
+    transform: translateY(-50%);
+}
+.fade-in{
+    opacity: 1;
+}
+.aura-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #fcc 10%, pink 30%, #f88 50%, pink 70%, #fcc 90%);
+}
+.container {
+    position: relative;
+    text-align: center;
+    background: #ffe2e5;
+    padding: 15px;
+    border-radius: 35px;
+    box-shadow: 10px 10px 0px #d6001a; 
+    border: 7px solid #d6001a;
+}
+.divider {
+    width: 112%;
+    height: 3px;
+    background: #d6001a;
+    margin: 15px -20px;
+}
+.heartIcon{
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d6001a;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+h1 {
+    color: #d6001a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 8vh;
+}
+button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.yes-btn{
+    background: #f4a5af;
+    color: white;
+}
+.yes-btn:hover {
+    background: rgb(91, 165, 96);
+}
+.no-btn{
+    position: relative;
+    background: #f4a5af;
+    color: white;
+}
+.no-btn:hover {     
+    background: rgb(231, 105, 105);
+}
+span{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+    animation: fadeInOut 1s linear infinite;
+}
+@keyframes fadeInOut{
+    0%,100%{
+        opacity: 0;
+    }
+    20%,80% {
+        opacity: 1;
+    }
+}
+span::before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(img/heart.png);
+    background-size: cover;
+    animation: moveShape 1s linear infinite;
+}
+@keyframes moveShape
+{
+    0%
+    {
+        transform: translate(0) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(300px) rotate(360deg);
+    }
+}

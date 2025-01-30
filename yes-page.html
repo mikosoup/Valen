@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YIPEE</title>
+    <link rel="stylesheet" href="yes-styles.css">
+</head>
+<body>
+    <img class="cat" src="img/cat-rose.png" alt="">
+    <img class="cd" src="img/cd.png" alt="">
+    <img class="text_sticker1" src="img/text.png" alt="">
+    <div class="playlist-box">
+    <p id="song-title1">Valentine - Laufey</p>
+    <audio controls autoplay class="audio1">
+      <source src="audio/Valentine - Laufey.mp3">
+    </audio>
+    <p id="song-title2">Glue Song - Beabadoobee</p>
+    <audio controls class="audio2">
+      <source src="audio/Glue Song - Beabadoobee.mp3">
+    </audio>
+    <p id="song-title3">Cariño - The Marías</p>
+    <audio controls class="audio3">
+      <source src="audio/The Marías - Cariño.mp3">
+    </audio>
+  </div>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>DINNER DATE</strong>
+                        <p>
+                            I would love nothing more than to spend this valentine with you ♡ <br>
+                            <br>
+                            WHERE: DOMUS<br>
+                            WHEN: FEB 15 @ 6 PM
+                            <img class="domus" src="img/domus.jpg" alt="">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+</body>
+<script>
+    const envelope = document.querySelector('.envelope-wrapper');
+    envelope.addEventListener('click', () => {
+        envelope.classList.toggle('flap');
+    });
+</script>
+</html>
